@@ -1,0 +1,4 @@
+./solution
+.env 
+./server/env
+node_modules
