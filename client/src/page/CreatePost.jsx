@@ -28,7 +28,7 @@ const CreatePost = () => {
     if (form.prompt) {
       try {
         setGeneratingImg(true);
-        const response = await fetch('http://localhost:5000/api/v1/dalle', {
+        const response = await fetch('https://ai-images-6a6s.onrender.com/api/v1/dalle', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -62,7 +62,7 @@ const CreatePost = () => {
         console.log(image);
 
         if (form.photo) {
-          await fetch ('http://localhost:5000/api/v1/post/image', {
+          await fetch ('https://ai-images-6a6s.onrender.com/api/v1/post/image', {
             method: 'GET',
             headers: {
               'Content-Type': 'application/json',
@@ -93,7 +93,7 @@ const CreatePost = () => {
 
             form.photo = key;
 
-            const response = await fetch('http://localhost:5000/api/v1/post', {
+            const response = await fetch('https://ai-images-6a6s.onrender.com/api/v1/post', {
               method: 'POST',
               headers: {
                 'Content-Type': 'application/json',
