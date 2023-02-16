@@ -17,10 +17,10 @@ router.route('/').get((req, res) => {
 });
 
 router.route('/').post(async (req, res) => {
-    console.log("in server");
+    console.log("In Dalle post route");
   try {
     const { prompt } = req.body;
-
+    
     const aiResponse = await openai.createImage({
       prompt,
       n: 1,
@@ -28,8 +28,10 @@ router.route('/').post(async (req, res) => {
       response_format: 'b64_json',
     });
 
+    // const image = aiResponse.data.data[0].b64_json;
     const image = aiResponse.data.data[0].b64_json;
-    res.status(200).json({ photo: image });
+
+    res.status(200).json({ photo: image, b64_json: image });
   } catch (error) {
     console.error(error);
     res.status(500).send(error?.response.data.error.message || 'Something went wrong');
