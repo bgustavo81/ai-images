@@ -8,8 +8,8 @@ import {Post} from "../models/post.js";
 dotenv.config();
 
 const s3 = new AWS.S3({
-    accessKeyId: "AKIA6CWBJA5BEMJLKVNN",
-    secretAccessKey: "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",
+    accessKeyId: process.env.AWS_S3_ACCESS_KEY,
+    secretAccessKey: process.env.AWS_S3_ACCESS_SECRET_KEY,
     endpoint: 's3-us-east-2.amazonaws.com',
     signatureVersion: 'v4',
     region: 'us-east-2'

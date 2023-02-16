@@ -4,10 +4,10 @@ const { Pool } = pg;
 console.log('in the pool');
 
 const pool = new Pool({
-    user: "bgustavo81",
-    host: "dpg-cfgldd02i3mg6pdvi950-a.ohio-postgres.render.com",
-    database: "app_database_dgmg",
-    password: "bjUdCcPFjUGpXSaV9a9x9MhUvSP4c1qE",
+    user: process.env.PG_USER,
+    host: process.env.PG_HOST,
+    database: process.env.PG_DATABASE,
+    password: process.env.PG_PASSWORD,
     port: 5432,
     ssl: true
 });
